@@ -42,7 +42,7 @@ pipeline {
                 nodejs(nodeJSInstallationName: 'node 22.5.1') {
                     sh 'npm -v'
                     sh 'pwd'
-                    sh 'cd webapp && cat Jenkinsfile'
+                    sh 'cd webapp && npm install && npm run build'
                 }
             }
     }
