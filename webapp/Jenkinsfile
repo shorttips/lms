@@ -42,7 +42,7 @@ pipeline {
                      / Clean npm cache
                     sh 'npm cache clean --force'
                     
-                    // Remove node_modules directory and package-lock.json file
+                    // Remove node_modules directory
                     sh 'rm -rf webapp/node_modules'
                 }
             }
