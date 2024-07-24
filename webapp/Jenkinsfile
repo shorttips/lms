@@ -42,10 +42,9 @@ pipeline {
                 nodejs(nodeJSInstallationName: 'node 22.5.1') {
                     sh 'npm -v'
                     sh 'pwd'
-                    sh 'cd ./webapp/'
+                    sh 'cd workspace/01-ecomm-deploy/webapp/'
                     sh 'pwd'
-                    sh 'npm install --prefix ./webapp/'
-                    sh 'npm build'
+                    sh 'cd webapp && npm install && npm run build'
                 }
             }
     }
