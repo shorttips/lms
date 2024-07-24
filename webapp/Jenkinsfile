@@ -16,7 +16,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 sh 'echo "Pulling Code from Github VCM"'
-                git branch: 'main', url: 'https://github.com/shorttips/lms.git/webapp'
+                git branch: 'main', url: 'https://github.com/shorttips/lms.git/'
             }
         }
 
@@ -41,6 +41,7 @@ pipeline {
                 sh 'echo "Build Stage...."'
                 nodejs(nodeJSInstallationName: 'node 22.5.1') {
                     sh 'npm -v'
+                    sh 'cd webapp/'
                     sh 'npm install'
                     sh 'npm build'
                 }
