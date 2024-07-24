@@ -44,7 +44,7 @@ pipeline {
                     sh 'pwd'
                     sh 'cd ./webapp/'
                     sh 'pwd'
-                    sh 'npm install'
+                    sh 'npm install --prefix ./webapp/'
                     sh 'npm build'
                 }
             }
