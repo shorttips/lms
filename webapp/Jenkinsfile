@@ -36,24 +36,13 @@ pipeline {
         }
         */
 
-        stage('Clean Workspace') {
-            steps {
-                script {
-                     / Clean npm cache
-                    sh 'npm cache clean --force'
-                    
-                    // Remove node_modules directory
-                    sh 'rm -rf webapp/node_modules'
-                }
-            }
-        }
-
+      
         stage('Build') {
             steps {
                 sh 'echo "Build Stage...."'
                 nodejs(nodeJSInstallationName: 'node 22.5.1') {
                     sh 'npm -v'
-                    sh 'node -v'
+                    sh 'rm -rf webapp/node_modules'
                     sh 'cd webapp && npm install && npm run build'
                 }
             }
