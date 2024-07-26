@@ -16,6 +16,7 @@ pipeline {
         //Pulls data from remote VCM and triggers the pipeline
         stage('Checkout') {
             steps {
+                Checkout scm
                 sh 'echo "Pulling Code from Github VCM"'
                 git branch: 'main', url: 'https://github.com/shorttips/lms.git/'
             }
@@ -45,7 +46,7 @@ pipeline {
                     sh "${scannerHome}/bin/sonar-scanner" \
                             -sonar.projectKey=lms-fe \
                             -sonar.projectName=ecomm-fe \
-                            -sonar.sources=.
+                            //-sonar.sources=
                             //to test
 
                     sleep time: 2, unit: 'MINUTES' //waits for 2 mins for sonarqube to performs analysis
