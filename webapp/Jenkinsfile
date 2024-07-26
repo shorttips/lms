@@ -43,11 +43,7 @@ pipeline {
                 
                 withSonarQubeEnv('sq1') {
                     // If you have configured more than one global server connection, you can specify its name as configured in Jenkins
-                    sh "${scannerHome}/bin/sonar-scanner" \
-                            -sonar.projectKey=lms-fe \
-                            -sonar.projectName=ecomm-fe \
-                            //-sonar.sources=
-                            //to test
+                    sh "${scannerHome}/bin/sonar-scanner"
 
                     sleep time: 2, unit: 'MINUTES' //waits for 2 mins for sonarqube to performs analysis
                     
