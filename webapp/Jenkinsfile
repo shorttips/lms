@@ -38,7 +38,7 @@ pipeline {
                 sh 'docker container start ${sonarqube_container_name}'
                 sleep 5 //waits for 5 sec for sonarqube container to start
 
-                scannerHome = tool 'sq1' //sq1-name of the installed scanner
+                def scannerHome = tool '<sq1>' //sq1-name of the installed scanner
                 
                 withSonarQubeEnv('sq1') {
                     // If you have configured more than one global server connection, you can specify its name as configured in Jenkins
