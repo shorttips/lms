@@ -1,3 +1,4 @@
 test 1
 edit test file
 added text
+added text 2
