@@ -45,7 +45,8 @@ pipeline {
                     sh "${scannerHome}/bin/sonar-scanner" \
                             -sonar.projectKey=lms-fe \
                             -sonar.projectName=ecomm-fe \
-                            -sonar.sources=./webapp
+                            -sonar.sources=.
+                            //to test
 
                     sleep time: 2, unit: 'MINUTES' //waits for 2 mins for sonarqube to performs analysis
                     
