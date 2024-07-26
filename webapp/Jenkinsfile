@@ -7,7 +7,7 @@ pipeline {
         SLACK_CREDENTIAL_ID = 'slack' // Replace with your Slack Credential ID
 
          // Define SonarQube environment variables
-        SONARQUBE_URL = 'http://13.127.214.243:9000'  
+        
         SONARQUBE_CREDENTIALS = 'sq1' 
         sonarqube_container_name = 'sonarqube'
     }
@@ -44,7 +44,7 @@ pipeline {
                     // If you have configured more than one global server connection, you can specify its name as configured in Jenkins
                     sh "${scannerHome}/bin/sonar-scanner" \
                             -Dsonar.projectKey=lms-fe \
-                            -Dsonar.sources=./webapp \
+                            -Dsonar.sources=./webapp
                     
 
                     sleep time: 2, unit: 'MINUTES' //waits for 2 mins for sonarqube to performs analysis
