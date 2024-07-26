@@ -40,6 +40,7 @@ pipeline {
                 sleep 5 //waits for 5 sec for sonarqube container to start
 
                 withSonarQubeEnv('sq1') {
+                    //txt
                     // If you have configured more than one global server connection, you can specify its name as configured in Jenkins
                     sh "${scannerHome}/bin/sonar-scanner" /*\
                             -sonar.projectKey=lms-fe \
