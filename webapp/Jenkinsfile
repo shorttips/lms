@@ -39,15 +39,17 @@ pipeline {
                 sh 'docker container start ${sonarqube_container_name}'
                 sleep 5 //waits for 5 sec for sonarqube container to start
 
+                
+                /*
                 withSonarQubeEnv('sq1') {
                     //txt
                     // If you have configured more than one global server connection, you can specify its name as configured in Jenkins
-                    sh "${scannerHome}/bin/sonar-scanner" /*\
+                    sh "${scannerHome}/bin/sonar-scanner" /
                             -sonar.projectKey=lms-fe \
                             -sonar.projectName=ecomm-fe \
                             //-sonar.sources=
                             //to test
-                            */
+                            
                             //dsfadasf
                             //dsaf
                             //dsaf
@@ -55,6 +57,8 @@ pipeline {
                     sleep time: 2, unit: 'MINUTES' //waits for 2 mins for sonarqube to performs analysis
                     
                 }
+                
+                */
 
                 sh 'docker container stop ${sonarqube_container_name}'
             }
