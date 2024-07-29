@@ -42,7 +42,7 @@ pipeline {
                 withSonarQubeEnv('sq1') {
                     //txt
                     // If you have configured more than one global server connection, you can specify its name as configured in Jenkins
-                    sh "${scannerHome}/bin/sonar-scanner" /
+                    sh "${scannerHome}/bin/sonar-scanner" \
                             -dsonar.projectKey=lms-fe \
                             -dsonar.projectName=ecomm-fe \
                             -dsonar.sources=.
